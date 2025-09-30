@@ -1,0 +1,40 @@
+const Footer = () => {
+  return (
+    <footer className="py-8 bg-white border-t border-gray-100">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4">
+        {/* Copyright */}
+        <p className="text-gray-600 text-sm sm:text-base">
+          © 2025 Rony Andrean. All rights reserved.
+        </p>
+
+        {/* Social Links */}
+        <div className="flex justify-center sm:justify-end gap-5">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-purple-600 transition-colors"
+          >
+            <i className="fab fa-github text-xl sm:text-2xl"></i>
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-purple-600 transition-colors"
+          >
+            <i className="fab fa-linkedin text-xl sm:text-2xl"></i>
+          </a>
+          <a
+            href="mailto:john.doe@email.com"
+            className="text-gray-400 hover:text-purple-600 transition-colors"
+          >
+            <i className="fas fa-envelope text-xl sm:text-2xl"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
