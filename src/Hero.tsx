@@ -67,7 +67,7 @@ const Hero = () => {
         {/* RIGHT: Image (hidden on mobile) */}
         <div className="relative justify-center w-2xl bottom-25 items-center md:justify-end hidden md:flex">
           <img
-            src="../src/assets/rony.png"
+            src="./assets/rony.png"
             alt="Profile"
             className="md:w-150 lg:w-156 xl:w-[60rem] object-cover rounded-lg"
           />
