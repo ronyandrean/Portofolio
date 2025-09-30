@@ -1,6 +1,25 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// LUXBID ASSESTS
+import Luxbid1 from "./assets/Luxbid/Landing-page.png"
+import Luxbid2 from "./assets/Luxbid/Profile.png"
+import Luxbid3 from "./assets/Luxbid/History-Bidding.png"
+
+// JROLL ASSESTS
+import JRoll1 from "./assets/JRoll/Main.png"
+import JRoll2 from "./assets/JRoll/Login.png"
+import JRoll3 from "./assets/JRoll/Watch.png"
+
+// Language ASSESTS
+import Language1 from "./assets/Language/Home.png"
+import Language2 from "./assets/Language/Guide.png"
+import Language3 from "./assets/Language/Language.png"
+
+// MBTI ASSESTS
+import MBTI1 from "./assets/MBTI/Main.png"
+import MBTI2 from "./assets/MBTI/Guide.png"
+
 interface ProjectType {
   id: number;
   title: string;
@@ -31,19 +50,19 @@ const Project = () => {
       description:
         " Blockchain-based Auction System – 3rd Place Winner, Hackathon ICP 2025",
       image: [
-        "./src/assets/Luxbid/Landing-page.png",
-        "./src/assets/Luxbid/Profile.png",
-        "./src/assets/Luxbid/History-Bidding.png",
+        Luxbid1,
+        Luxbid2,
+        Luxbid3,
       ],
       tech: ["Motoko", "React", "Tailwind"],
       github: "https://github.com/ronyandrean/luxbid",
       demo: "https://zagp4-4aaaa-aaaah-qqcaq-cai.icp0.io",
       contributors: [
         "Rony Andrean",
-        "Juan Adriviano",
-        "Austin Oswald",
-        "Wilson",
-        "Vanessa",
+        "Juan Ariviano Chandra",
+        "Austin Oswald Tjokrohandoko",
+        "Nathanael Wilson Angelo",
+        "Vanessa Maurencia Karyanto",
       ],
       role: "Team Leader & Fullstack Developer",
       year: 2024,
@@ -54,19 +73,19 @@ const Project = () => {
       description:
         "An anime and film streaming website enhanced with AI features for content recommendation and toxic comment moderation.",
       image: [
-        "./src/assets/JRoll/Main.png",
-        "./src/assets/JRoll/Login.png",
-        "./src/assets/JRoll/Watch.png",
+        JRoll1,
+        JRoll2,
+        JRoll3,
       ],
       tech: ["React", "Tailwind", "Firebase", "Flask"],
       github: " https://github.com/stynw7/jroll-ai ",
       demo: "https://jroll-frontend.vercel.app",
       contributors: [
         "Rony Andrean",
-        "Stainley Wijaya",
-        "Steve",
-        "Valentino",
-        "Vanessa",
+        "Stanley Nathanael Wijaya",
+        "Steve Febryanto Tan",
+        "Valentino Febrian Kencono",
+        "Nickson Leviel Hermawan",
       ],
       role: "AI Engineering",
       year: 2025,
@@ -77,9 +96,9 @@ const Project = () => {
       description:
         "An AI-based web tool that accurately classifies text input into 22 different languages using a fine-tuned language model.",
       image: [
-        "./src/assets/Language/Home.png",
-        "./src/assets/Language/Guide.png",
-        "./src/assets/Language/Language.png",
+        Language1,
+        Language2,
+        Language3,
       ],
       tech: ["React", "Tailwind", "Flask"],
       github: " https://github.com/ronyandrean/language-classification",
@@ -87,7 +106,7 @@ const Project = () => {
       contributors: [
         "Rony Andrean",
         "Kenny Janson",
-        "Tasya"
+        "Syabita Salma Habibah"
       ],
       role: "Team Leader & Fullstack Developer",
       year: 2024,
@@ -98,8 +117,8 @@ const Project = () => {
       description:
         "An empathetic AI web app that predicts a user's MBTI personality type based on free-form text, offering self reflection and emotional support.",
       image: [
-        "./src/assets/MBTI/Main.png",
-        "./src/assets/MBTI/Guide.png",
+        MBTI1,
+        MBTI2,
       ],
       tech: ["React", "Tailwind", "Flask"],
       github: "https://github.com/ronyandrean/mbti-personality-type-identification",

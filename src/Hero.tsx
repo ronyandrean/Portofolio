@@ -1,9 +1,10 @@
 import Rony from "./assets/rony.png";
+import PDFfile from "./assets/CV.pdf"
 
 const Hero = () => {
   const downloadPdf = () => {
     const link = document.createElement("a");
-    link.href = "./src/assets/CV.pdf";
+    link.href = PDFfile;
     link.download = "Rony_Andrean_CV.pdf";
     link.click();
   };
