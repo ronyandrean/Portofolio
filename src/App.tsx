@@ -32,15 +32,21 @@ function App() {
       <div className="bg-gradient-to-br from-gray-50 to-white min-h-screen">
         <Navbar />
         <div className="h-[10vh]  bg-white"></div>
-        <Hero />
 
-        <About />
+        <section id="home" className="snap-section">
+          {" "}
+          <Hero />{" "}
+        </section>
+        
+        <section id="about" className="snap-section">
+          {" "}
+          <About />{" "}
+        </section>
 
-        <Project />
-
-        <Skills />
-
-        <Contact />
+        <section id="projects" className="snap-section">
+          {" "}
+          <Project />{" "}
+        </section>
 
         <Footer />
       </div>

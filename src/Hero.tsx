@@ -44,25 +44,32 @@ const Hero = () => {
           {/* Social Icons */}
           <div className="flex gap-4 pt-2 px-2 text-3xl text-gray-700 justify-center md:justify-start">
             <a
-              href="https://github.com"
+              href="https://github.com/ronyandrean"
               target="_blank"
               className="hover:text-[#A9927D] text-black"
             >
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/rony-andrean"
               target="_blank"
               className="hover:text-[#A9927D] text-black"
             >
               <i className="fab fa-linkedin"></i>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/_ronyy.a"
               target="_blank"
               className="hover:text-[#A9927D] text-black"
             >
               <i className="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://wa.me/082384977300"
+              target="_blank"
+              className="hover:text-[#A9927D] text-black"
+            >
+              <i className="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
