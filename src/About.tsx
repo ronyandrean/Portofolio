@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import TechBanner from "./TechBanner";
-import Rony1 from "./assets/Rony1.jpg";
+import Rony1 from "./assets/rony1.jpg";
 
 const About = () => {
   return (
