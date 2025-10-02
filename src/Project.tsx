@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // LUXBID ASSETS
 import Luxbid1 from "./assets/Luxbid/Landing-page.png";
@@ -52,21 +51,6 @@ const Project = () => {
     setShowPopUp(true);
     setPopUpProject(project);
     setCurrentImg(0);
-  };
-
-  const nextImg = () => {
-    if (popUpProject?.image) {
-      setCurrentImg((prev) => (prev + 1) % popUpProject.image!.length);
-    }
-  };
-
-  const prevImg = () => {
-    if (popUpProject?.image) {
-      setCurrentImg(
-        (prev) =>
-          (prev - 1 + popUpProject.image!.length) % popUpProject.image!.length
-      );
-    }
   };
 
   const projects: ProjectType[] = [
