@@ -28,21 +28,31 @@ const TechBanner = () => {
   ];
 
   return (
-    <div className="py-8 sm:py-12 bg-white border-y border-gray-100 overflow-hidden">
+    <div className="py-8 sm:py-10 lg:py-12 bg-gradient-to-r from-white via-[#A9927D]/5 to-white border-y border-[#A9927D]/10 overflow-hidden">      
       <div className="relative">
+        {/* Gradient overlays untuk fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
         {/* Scrolling wrapper */}
         <div className="flex animate-scroll">
           {[...techLogos, ...techLogos].map((tech, index) => (
             <div
               key={index}
-              className="flex items-center justify-center mx-4 sm:mx-6 md:mx-8"
+              className="flex flex-col items-center justify-center mx-3 sm:mx-5 md:mx-8 min-w-[80px] sm:min-w-[100px] group"
             >
-              <Icon
-                icon={tech.icon}
-                color={tech.color}
-                width="50"
-                height="50"
-              />
+              <div className="transition-transform hover:scale-125 hover:-translate-y-2">
+                <Icon
+                  icon={tech.icon}
+                  color={tech.color}
+                  width="40"
+                  height="40"
+                  className="sm:w-12 sm:h-12 md:w-14 md:h-14"
+                />
+              </div>
+              <span className="text-xs sm:text-sm text-gray-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                {tech.name}
+              </span>
             </div>
           ))}
         </div>

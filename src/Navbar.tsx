@@ -1,83 +1,94 @@
 import { useState, useEffect } from "react";
 
+const NAV_ITEMS = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
+    const onScroll = () => {
       setScrolled(window.scrollY > 50);
-
-      const sections = document.querySelectorAll("section[id]");
-      let current = "home";
-      
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 3 && rect.bottom >= window.innerHeight / 3) {
-          current = section.getAttribute("id") || "home";
-        }
-      });
-      
-      setActiveSection(current);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
       setIsMenuOpen(false);
     }
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white/90 backdrop-blur-sm"}`}>
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex justify-between items-center h-20">
-          <h1 className="text-xl sm:text-2xl font-bold text-[#A9927D] tracking-tight">
-            Rony Andrean
-          </h1>
+        <div className="flex items-center justify-between h-20">
+          {/* Logo / Nama */}
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-left border-0 bg-transparent"
+            aria-label="Go to home"
+          >
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#A9927D] tracking-wide hover:scale-105 transition-transform duration-300">
+              Rony Andrean
+            </h1>
+          </button>
 
-          <div className="hidden md:flex items-center space-x-10">
-            {["home", "about", "projects"].map((item) => (
+          {/* Desktop menu */}
+          <div className="hidden md:flex items-center space-x-12">
+            {NAV_ITEMS.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className={`capitalize font-medium text-base relative transition-colors ${
-                  activeSection === item ? "text-[#A9927D]" : "text-gray-700 hover:text-[#A9927D]"
-                }`}
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="relative group px-1 py-2 text-lg font-semibold text-gray-700 hover:text-[#A9927D] transition-all duration-300 hover:scale-105"
               >
-                {item}
-                <span className={`absolute left-0 -bottom-2 h-0.5 bg-[#A9927D] transition-all duration-300 ${activeSection === item ? "w-full" : "w-0"}`}></span>
+                <span>{item.label}</span>
+                {/* animated underline */}
+                <span className="absolute left-0 -bottom-1 h-[3px] w-full origin-left scale-x-0 group-hover:scale-x-100 bg-[#A9927D] transition-transform duration-300"></span>
               </button>
             ))}
           </div>
 
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-gray-700 focus:outline-none p-2">
-            <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-2xl`}></i>
+          {/* Mobile button */}
+          <button
+            onClick={() => setIsMenuOpen((s) => !s)}
+            className="md:hidden p-2 rounded-md text-gray-700 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <i
+              className={`fas ${
+                isMenuOpen ? "fa-times" : "fa-bars"
+              } text-3xl`}
+            ></i>
           </button>
         </div>
       </div>
 
+      {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-lg shadow-lg border-t border-gray-100">
-          <div className="px-6 py-4 space-y-1">
-            {["home", "about", "projects"].map((item) => (
+        <div className="md:hidden bg-white/95 backdrop-blur-lg shadow-md border-t border-gray-100">
+          <div className="px-6 py-4 space-y-2">
+            {NAV_ITEMS.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  activeSection === item
-                    ? "bg-[#A9927D]/10 text-[#A9927D]"
-                    : "text-gray-700 hover:bg-[#A9927D]/5 hover:text-[#A9927D]"
-                }`}
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left px-4 py-3 rounded-lg text-lg font-semibold text-gray-700 hover:bg-[#A9927D]/10 hover:text-[#A9927D] transition-all"
               >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
+                {item.label}
               </button>
             ))}
           </div>

@@ -1,78 +1,135 @@
+import { motion } from "framer-motion";
 import TechBanner from "./TechBanner";
+import Rony1 from "./assets/Rony1.jpg";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="h-fit relative flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      className="min-h-screen flex items-center py-20 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-20 bg-gradient-to-b from-white via-[#F9F6F3] to-[#F3EEE9] relative overflow-hidden"
     >
-      <div className="absolute top-10 left-10 w-40 h-40 bg-[#A9927D]/5 rounded-full blur-2xl"></div>
-      <div className="absolute bottom-10 right-10 w-60 h-60 bg-[#A9927D]/5 rounded-full blur-2xl"></div>
+      {/* Decorative blobs */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-[#A9927D]/10 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#CBBBA0]/20 rounded-full blur-3xl -z-10"></div>
 
-      <div className="max-w-4xl lg:max-w-5xl mx-auto relative z-10 w-full">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 gradient-text">
+      <div className="max-w-6xl mx-auto relative z-10 w-full">
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 lg:mb-16 gradient-text"
+        >
           About Me
-        </h2>
+        </motion.h2>
 
-        <div className="bg-gradient-to-br from-white to-[#A9927D]/5 rounded-2xl shadow-2xl p-8 lg:p-12 border border-[#A9927D]/10">
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <p className="text-gray-700 font-semibold text-lg leading-relaxed">
-                Hello there! I'm Rony, a dedicated Full-Stack Developer. I began
-                my coding life back in Riau and have been enjoying the ride ever
-                since.
-              </p>
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center mb-16">
+          {/* Foto */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center order-1"
+          >
+            <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-[#A9927D]/30 hover:border-[#A9927D]/60 transition-all hover:scale-105">
+              <img
+                src={Rony1}
+                alt="Rony Andrean"
+                className="object-cover w-full h-full"
+              />
             </div>
+          </motion.div>
 
-            <div className="flex items-start gap-4">
-              <p className="text-gray-700 font-semibold text-lg leading-relaxed">
-                I believe functionality should come with flair. I love creating
-                fun, user-centric designs that feel great to use. Reach out if
-                you need a developer who can smoothly blend technical quality
-                with creative design!
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                Experiences
-              </h1>
-            </div>
-
-            <div className="flex flex-row items-start gap-4">
-              <div className="flex-1">
-                <h2 className="text-gray-700 font-semibold text-lg leading-relaxed">
-                  Mentor Scholarship
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  BINUS University
-                </p>
-              </div>
-
-              <div className="flex items-center justify-center pt-2 px-3">
-                <h2>2024 - Present</h2>
-              </div>
-            </div>
-
-            <div className="flex flex-row items-start gap-4">
-              <div className="flex-1">
-                <h2 className="text-gray-700 font-semibold text-lg leading-relaxed">
-                  BINUS University
-                </h2>
-                <p className="text-gray-700 leading-relaxed">Undergraduate Students</p>
-              </div>
-
-              <div className="flex items-center justify-center pt-2 px-3">
-                <h2>
-                  2023 - Present
-                </h2>
-              </div>
-            </div>
-
-            <TechBanner/>
-
-          </div>
+          {/* Deskripsi */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-center md:text-left order-2 px-2"
+          >
+            <p className="text-gray-700 text-base sm:text-lg lg:text-xl leading-relaxed mb-6">
+              Hello there! I'm{" "}
+              <span className="font-bold text-[#A9927D]">Rony</span>, a
+              passionate{" "}
+              <span className="font-bold">Full-Stack Developer</span> with a
+              strong eye for design. I started coding back in Riau and have been
+              enjoying every line of code since then.
+            </p>
+            <p className="text-gray-700 text-base sm:text-lg lg:text-xl leading-relaxed">
+              I believe functionality should come with{" "}
+              <span className="italic">flair</span>. My goal is to craft
+              user-centric experiences that are both
+              <span className="font-bold text-[#A9927D]"> practical </span>
+              and{" "}
+              <span className="font-bold text-[#A9927D]">beautiful</span>.
+            </p>
+          </motion.div>
         </div>
+
+        {/* Experiences */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-12 w-full max-w-5xl mx-auto px-2 sm:px-4"
+        >
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-8 text-center md:text-left">
+            Experiences
+          </h3>
+          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 lg:p-10 border border-[#A9927D]/20">
+            <div className="space-y-6 border-l-2 border-[#A9927D]/40 pl-6">
+              {[
+                {
+                  role: "Freshmen Leader",
+                  year: "2025 - Present",
+                  place: "BINUS University",
+                },
+                {
+                  role: "Mentor Scholarship",
+                  year: "2024 - Present",
+                  place: "BINUS University",
+                },
+                {
+                  role: "Undergraduate Student",
+                  year: "2023 - Present",
+                  place: "BINUS University",
+                },
+              ].map((exp, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ x: 6 }}
+                  className="transition-transform"
+                >
+                  <h4 className="font-semibold text-lg lg:text-xl text-gray-800">
+                    {exp.role}{" "}
+                    <span className="text-sm text-gray-500 block sm:inline">
+                      {exp.year}
+                    </span>
+                  </h4>
+                  <p className="text-gray-600 text-sm sm:text-base mt-1">
+                    {exp.place}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Tech Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <TechBanner />
+        </motion.div>
       </div>
     </section>
   );

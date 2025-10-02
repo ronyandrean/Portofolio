@@ -33,17 +33,17 @@ function App() {
         <Navbar />
         <div className="h-[10vh]  bg-white"></div>
 
-        <section id="home" className="snap-section">
+        <section id="home" className="min-h-screen snap-section">
           {" "}
           <Hero />{" "}
         </section>
         
-        <section id="about" className="snap-section">
+        <section id="about" className="min-h-screen snap-section">
           {" "}
           <About />{" "}
         </section>
 
-        <section id="projects" className="snap-section">
+        <section id="projects" className="min-h-screen snap-section">
           {" "}
           <Project />{" "}
         </section>
